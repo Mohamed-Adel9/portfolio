@@ -1,0 +1,250 @@
+import 'package:animated_text_kit/animated_text_kit.dart';
+import 'package:flutter/material.dart';
+import 'package:portfolio/helper/font_helper.dart';
+
+class PersonalInfoComponent extends StatelessWidget {
+  PersonalInfoComponent({
+    super.key,
+     this.isMobile = false,
+  });
+
+  bool isMobile ;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        ShaderMask(
+          shaderCallback: (Rect bounds) {
+            return const LinearGradient(
+              colors: [Colors.purple, Colors.deepOrange, Colors.amber],
+              stops: [0.0, .8, 1.0],
+              begin: Alignment.centerLeft,
+              end: Alignment.centerRight,
+            ).createShader(bounds);
+          },
+          child: Text(
+            "Hello, I'M Mohamed",
+            style: TextStyle(
+              fontSize: isMobile ?  30.0 : 36.0,
+              color: Colors.white,
+              fontFamily: FontHelper.font2,
+              fontWeight: FontWeight.w900,
+            ),
+          ),
+        ),
+        SizedBox(
+          height: isMobile ? 30.0 : 50.0,
+        ),
+        AnimatedTextKit(
+          animatedTexts: [
+            TypewriterAnimatedText(
+              'Flutter Developer',
+              textStyle: TextStyle(
+                  shadows: const [
+                    Shadow(
+                        color: Color(0xff5FBCFF),
+                        blurRadius: 30.0,
+                        offset: Offset(2, 2)),
+                  ],
+                  fontSize: isMobile ? 25.0 : 36.0,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: FontHelper.font2,
+                  color: Colors.white),
+              speed: const Duration(milliseconds: 100),
+            ),
+            TypewriterAnimatedText(
+              'Mobile  Developer',
+              textStyle: TextStyle(
+                  shadows: const [
+                    Shadow(
+                        color: Color(0xff5FBCFF),
+                        blurRadius: 30.0,
+                        offset: Offset(2, 2)),
+                  ],
+                  fontSize: isMobile ? 25.0 : 36.0,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: FontHelper.font2,
+                  color: Colors.white),
+              speed: const Duration(milliseconds: 100),
+            ),
+            TypewriterAnimatedText(
+              'Software Engineer',
+              textStyle: TextStyle(
+                  shadows: const [
+                    Shadow(
+                        color: Color(0xff5FBCFF),
+                        blurRadius: 30.0,
+                        offset: Offset(2, 2)),
+                  ],
+                  fontSize: isMobile ? 25.0 : 36.0,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: FontHelper.font2,
+                  color: Colors.white),
+              speed: const Duration(milliseconds: 100),
+            ),
+          ],
+          repeatForever: true,
+          isRepeatingAnimation: true,
+          pause: const Duration(milliseconds: 500),
+        ),
+        SizedBox(
+          height: isMobile ? 30.0 : 50.0,
+        ),
+        Text(
+          "FROM EGYPT",
+          style: FontHelper.font2Bold(isMobile ? 30.0 : 40.0, color: Colors.white),
+        ),
+        const SizedBox(
+          height: 30,
+        ),
+        SizedBox(
+          width: 450,
+          height: 150,
+          child: Text(
+            textAlign: TextAlign.justify,
+            "A skilled flutter developer with 3 years of experience, you can contact me at any time to start a work full of creativity and good performance",
+            style: FontHelper.font1Regular(18, color: Colors.white),
+          ),
+        ),
+        Row(
+          children: [
+            Container(
+              height: 50,
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(25),
+                  gradient: const LinearGradient(
+                      colors: [Colors.purple, Colors.deepOrange, Colors.amber],
+                      stops: [0.0, .8, 1.0],
+                      begin: Alignment.centerLeft,
+                      end: Alignment.centerRight)),
+              child: TextButton(
+                onPressed: () {
+                  // todo go to gmail to contact me
+                },
+                child: Text(
+                  "GET IN TOUCH",
+                  style: FontHelper.font1SemiBold(
+                    isMobile ? 15.0 : 18.0,
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(
+              width: isMobile ? 15.0 : 25.0,
+            ),
+            Container(
+              height: 50,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(25),
+              ),
+              child: TextButton(
+                onPressed: () {
+                  // todo go to gmail to contact me
+                },
+                style: TextButton.styleFrom(
+                  shape: const StadiumBorder(
+                    side: BorderSide(
+                      color: Colors.white,
+                      width: 2.5,
+                    ),
+                  ),
+                ),
+                child: Text(
+                  "GitHub Profile",
+                  style: FontHelper.font1SemiBold(
+                    isMobile ? 15.0 : 18.0,
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
+        const SizedBox(
+          height: 35,
+        ),
+        Row(
+          children: [
+            Container(
+              height: 40,
+              width: 40,
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                  gradient: const LinearGradient(
+                      colors: [Colors.blue, Colors.blueAccent],
+                      stops: [0.0, 1.0],
+                      begin: Alignment.centerLeft,
+                      end: Alignment.centerRight)),
+              child: TextButton(
+                onPressed: () {
+                  // todo nav to facebook
+                },
+                child: Image.asset(
+                  "assets/images/social/facebook.png",
+                  color: Colors.white,
+                ),
+              ),
+            ),
+            TextButton(
+              onPressed: () {
+                // todo nav to instagram
+              },
+              child: SizedBox(
+                width: 50,
+                height: 50,
+                child: Image.asset(
+                  "assets/images/social/instagram.png",
+                 fit: BoxFit.cover,
+                ),
+              ),
+            ),
+            TextButton(
+              onPressed: () {
+                // todo nav to linkedin
+              },
+              child: SizedBox(
+                width: 40,
+                height: 40,
+                child: Image.asset(
+                  "assets/images/social/linkedin.png",
+                  fit: BoxFit.cover,
+
+                ),
+              ),
+            ),
+            TextButton(
+              onPressed: () {
+                // todo nav to GitHub
+              },
+              child: Image.asset(
+                "assets/images/social/github.png",
+                fit: BoxFit.fill,
+                color: Colors.white,
+                width: 50,
+                height: 50,
+
+              ),
+            ),
+            TextButton(
+              onPressed: () {
+                // todo nav to whatsapp
+              },
+              child: Image.asset(
+                "assets/images/social/wahtsapp.png",
+                fit: BoxFit.cover,
+                width: 45,
+                height: 45,
+
+              ),
+            ),
+
+
+          ],
+        ),
+      ],
+    );
+  }
+}
