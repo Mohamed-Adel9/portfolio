@@ -66,7 +66,7 @@ class ScreenBuilder extends StatelessWidget {
                       //page two
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 14.0),
-                        child: const AboutMeText(),
+                        child: AboutMeText(isMobile: true,),
                       ),
 
                       //separator
@@ -132,7 +132,7 @@ class ScreenBuilder extends StatelessWidget {
                       const MySeparator(text: "About Me",),
 
                       //page two
-                     const AboutMeText(),
+                      AboutMeText(isMobile: false,),
 
                       //separator
                       const MySeparator(text: "What I Do",),

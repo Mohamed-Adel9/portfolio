@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/componenets/glowing_button.dart';
 import 'package:portfolio/componenets/my_text_button.dart';
+import 'package:portfolio/helper/font_helper.dart';
 
 class NavBarWidget extends StatelessWidget {
   const NavBarWidget({
@@ -51,7 +52,12 @@ class NavBarWidget extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Image.asset("assets/images/Logo.png",fit: BoxFit.cover,height: 60,width: 130,),
+                Row(
+                  children: [
+                    Image.asset("assets/images/Logo.png",fit: BoxFit.cover,height: 60,width: 100,),
+                    Text("Mohamed Adel",style: FontHelper.font1Regular(18,color: Colors.white),)
+                  ],
+                ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
