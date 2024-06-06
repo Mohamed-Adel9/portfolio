@@ -6,7 +6,7 @@ class AboutMeText extends StatelessWidget {
     super.key,
     this.isMobile = false,
   });
-  bool isMobile = false;
+  final bool isMobile;
 
   final List<String> texts = [
     "I'm a skilled Flutter developer with a passion for creating innovative mobile apps.",
@@ -28,7 +28,6 @@ class AboutMeText extends StatelessWidget {
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: texts.asMap().entries.map((entry) {
-            int index = entry.key;
             String text = entry.value;
             bool isTitle = text == '“Personality”';
             return isTitle
@@ -95,8 +94,8 @@ class AboutMeText extends StatelessWidget {
                         width: 250,
                         child: Text(
                           "Years of Experience in Flutter",
-                          style: FontHelper.font2SemiBold(20,
-                              color: Colors.white),
+                          style:
+                              FontHelper.font2SemiBold(20, color: Colors.white),
                           textAlign: TextAlign.center,
                         ),
                       ),
@@ -135,8 +134,8 @@ class AboutMeText extends StatelessWidget {
                         width: 250,
                         child: Text(
                           "Successfully Projects Complete",
-                          style: FontHelper.font2SemiBold(20,
-                              color: Colors.white),
+                          style:
+                              FontHelper.font2SemiBold(20, color: Colors.white),
                           textAlign: TextAlign.center,
                         ),
                       ),
@@ -175,8 +174,8 @@ class AboutMeText extends StatelessWidget {
                         width: 250,
                         child: Text(
                           "Years of Experience in Software Development",
-                          style: FontHelper.font2SemiBold(20,
-                              color: Colors.white),
+                          style:
+                              FontHelper.font2SemiBold(20, color: Colors.white),
                           textAlign: TextAlign.center,
                         ),
                       ),
@@ -218,8 +217,8 @@ class AboutMeText extends StatelessWidget {
                         width: 250,
                         child: Text(
                           "Years of Experience in Flutter",
-                          style: FontHelper.font2SemiBold(20,
-                              color: Colors.white),
+                          style:
+                              FontHelper.font2SemiBold(20, color: Colors.white),
                           textAlign: TextAlign.center,
                         ),
                       ),
@@ -260,8 +259,8 @@ class AboutMeText extends StatelessWidget {
                         width: 250,
                         child: Text(
                           "Successfully Projects Complete",
-                          style: FontHelper.font2SemiBold(20,
-                              color: Colors.white),
+                          style:
+                              FontHelper.font2SemiBold(20, color: Colors.white),
                           textAlign: TextAlign.center,
                         ),
                       ),
@@ -302,8 +301,8 @@ class AboutMeText extends StatelessWidget {
                         width: 250,
                         child: Text(
                           "Years of Experience in Software Development",
-                          style: FontHelper.font2SemiBold(20,
-                              color: Colors.white),
+                          style:
+                              FontHelper.font2SemiBold(20, color: Colors.white),
                           textAlign: TextAlign.center,
                         ),
                       ),
