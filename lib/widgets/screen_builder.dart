@@ -74,6 +74,9 @@ class ScreenBuilder extends StatelessWidget {
 
                       //separator
                       const MySeparator(text: "What I Do",),
+
+                      //page three
+                      const WhatIDoPage(isMobile: true,),
                     ],
                   ),
                 ],
