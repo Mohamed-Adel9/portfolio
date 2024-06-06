@@ -9,13 +9,14 @@ class LandingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(
-          horizontal: 50.0, vertical: 50.0),
+      padding: const EdgeInsets.symmetric(horizontal: 50.0, vertical: 50.0),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          PersonalInfoComponent(isMobile: false,),
+          PersonalInfoComponent(
+            isMobile: false,
+          ),
           const SizedBox(
             width: 50,
           ),
@@ -31,8 +32,8 @@ class LandingPage extends StatelessWidget {
             ),
             child: const CircleAvatar(
               radius: 400, // Adjust as needed
-              backgroundColor: Colors
-                  .transparent, // Make the background transparent
+              backgroundColor:
+                  Colors.transparent, // Make the background transparent
               // Optionally, you can add a child widget to the CircleAvatar
               //child: Icon(Icons.person),
             ),
