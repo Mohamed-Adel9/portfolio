@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/widgets/nav_bar_widget.dart';
-import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:portfolio/widgets/screen_builder.dart';
 
 class HomeScreen extends StatelessWidget {

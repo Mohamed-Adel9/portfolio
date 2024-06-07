@@ -14,7 +14,7 @@ class LandingPage extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          PersonalInfoComponent(
+          const PersonalInfoComponent(
             isMobile: false,
           ),
           const SizedBox(

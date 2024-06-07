@@ -1,20 +1,19 @@
 import 'package:flutter/material.dart';
 
 class MyTextButtonTextWidget extends StatelessWidget {
-
-  MyTextButtonTextWidget({
+  const MyTextButtonTextWidget({
     super.key,
     required this.text,
     required this.onPressed,
   });
 
-  String text ;
-  void Function() onPressed ;
+  final String text;
+  final void Function() onPressed;
 
   @override
   Widget build(BuildContext context) {
     return TextButton(
-        onPressed: onPressed ,
+        onPressed: onPressed,
         child: Text(
           text,
           style: const TextStyle(

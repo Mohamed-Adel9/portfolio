@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:portfolio/helper/font_helper.dart';
 
 class PersonalInfoComponent extends StatelessWidget {
-  PersonalInfoComponent({
+  const PersonalInfoComponent({
     super.key,
      this.isMobile = false,
   });
 
-  bool isMobile ;
+  final bool isMobile ;
 
   @override
   Widget build(BuildContext context) {

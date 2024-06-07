@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:portfolio/componenets/about_me_text.dart';
 import 'package:portfolio/componenets/my_separator.dart';
 import 'package:portfolio/componenets/personal_info_component.dart';
-import 'package:portfolio/componenets/programming_lang_cart.dart';
-import 'package:portfolio/helper/font_helper.dart';
+import 'package:portfolio/componenets/vertical_number_selector.dart';
 import 'package:portfolio/widgets/landing_page.dart';
 import 'package:portfolio/widgets/what_i_do.dart';
 
@@ -57,7 +56,7 @@ class ScreenBuilder extends StatelessWidget {
                               ),
                             ),
                             const SizedBox(height: 20.0,),
-                            PersonalInfoComponent(isMobile: true,),
+                            const PersonalInfoComponent(isMobile: true,),
 
                           ],
                         ),
@@ -114,6 +113,17 @@ class ScreenBuilder extends StatelessWidget {
 
                       //page three
                       const WhatIDoPage(),
+
+                      //separator
+                      const MySeparator(text: "My Projects"),
+
+                      //page four
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          NumberHighlightScreen(),
+                        ],
+                      ),
 
 
 
