@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:portfolio/componenets/about_me_text.dart';
 import 'package:portfolio/componenets/my_separator.dart';
 import 'package:portfolio/componenets/personal_info_component.dart';
+import 'package:portfolio/componenets/used_technology.dart';
 import 'package:portfolio/componenets/vertical_number_selector.dart';
 import 'package:portfolio/widgets/landing_page.dart';
 import 'package:portfolio/widgets/what_i_do.dart';
@@ -118,12 +119,10 @@ class ScreenBuilder extends StatelessWidget {
                       const MySeparator(text: "My Projects"),
 
                       //page four
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
+
                           NumberHighlightScreen(),
-                        ],
-                      ),
+
+
 
 
 

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/componenets/used_technology.dart';
+import 'package:portfolio/helper/font_helper.dart';
 
 class NumberHighlightScreen extends StatefulWidget {
   @override
@@ -7,7 +9,8 @@ class NumberHighlightScreen extends StatefulWidget {
 
 class _NumberHighlightScreenState extends State<NumberHighlightScreen> {
   List<int> numbers = [1, 2, 3, 4, 5, 6];
-  int? selectedNumber;
+  int? selectedNumber = 1;
+  bool isGooglePlay = true;
 
   void selectNumber(int number) {
     setState(() {
@@ -17,46 +20,114 @@ class _NumberHighlightScreenState extends State<NumberHighlightScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: numbers.map((number) {
-          bool isSelected = selectedNumber == number;
-          return GestureDetector(
-            onTap: () => selectNumber(number),
-            child: Container(
-              margin: EdgeInsets.symmetric(vertical: 8.0),
-              child: Text(
-                number.toString(),
-                style: TextStyle(
-                  fontSize: 32.0,
-                  color: isSelected ? Colors.white : Colors.purple,
-                  fontWeight: isSelected ? FontWeight.bold : FontWeight.normal,
-                  shadows: isSelected
-                      ?[
-                    BoxShadow(
-                      color: Colors.blue.withOpacity(0.5),
-                      blurRadius: 30.0,
-                      spreadRadius: 10.0,
+    return Row(
+      children: [
+        Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: numbers.map((number) {
+            bool isSelected = selectedNumber == number;
+            return GestureDetector(
+              onTap: () => selectNumber(number),
+              child: Stack(
+                alignment: Alignment.center,
+                children: [
+                  //back ground for the selected
+                  isSelected
+                      ? Image.asset(
+                          "assets/images/Ellipse.png",
+                          fit: BoxFit.cover,
+                        )
+                      : Container(),
+
+                  Container(
+                    margin: const EdgeInsets.symmetric(vertical: 8.0),
+                    child: Text(
+                      number.toString(),
+                      style: TextStyle(
+                        fontSize: 32.0,
+                        color:
+                            isSelected ? Colors.white : Colors.purple.shade200,
+                        fontWeight:
+                            isSelected ? FontWeight.bold : FontWeight.normal,
+                      ),
                     ),
-                    BoxShadow(
-                      color: Colors.blueAccent.withOpacity(0.5),
-                      blurRadius: 60.0,
-                      spreadRadius: 20.0,
-                    ),
-                    BoxShadow(
-                      color: Colors.purple.withOpacity(0.5),
-                      blurRadius: 100.0,
-                      spreadRadius: 50.0,
-                    ),
-                  ]
-                      : [],
-                ),
+                  ),
+                ],
+              ),
+            );
+          }).toList(),
+        ),
+        const SizedBox(
+          width: 20,
+        ),
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              "Project name",
+              style: FontHelper.font2SemiBold(
+                40,
+                color: Colors.white,
               ),
             ),
-          );
-        }).toList(),
-      ),
+            const SizedBox(
+              height: 20,
+            ),
+            const UsedTechnology(
+              buttonLabels: ["Flutter", "Dart", "Firebase", "Figma"],
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            Text(
+              "Application Description :",
+              style: FontHelper.font1Regular(
+                15,
+                color: Colors.white,
+              ),
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            Text("description",
+                maxLines: 4,
+                overflow: TextOverflow.ellipsis,
+                textAlign: TextAlign.start,
+                style: TextStyle(
+                  fontSize: 15,
+                  color: Colors.white,
+                  fontFamily: FontHelper.font1,
+                  fontWeight: FontWeight.w500,
+                )),
+            SizedBox(height: 15,),
+            isGooglePlay
+                ? InkWell(
+                    onTap: () {
+                      //todo nav to google play
+                    },
+                    child: Image.asset("assets/images/google_play.png"))
+                : Container(
+                    decoration: BoxDecoration(
+                      border: Border.all(
+                        color: Colors.white,
+                        width: 1,
+                      ),
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: TextButton(
+                      onPressed: () {
+                        // todo nav to github project link
+                      },
+                      child: Text(
+                        "GitHub Link",
+                        style:
+                            FontHelper.font2SemiBold(15, color: Colors.white),
+                      ),
+                    ),
+                  ),
+          ],
+        ),
+      ],
     );
   }
 }

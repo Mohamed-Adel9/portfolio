@@ -67,6 +67,9 @@ flutter:
      - assets/images/BG.png
      - assets/images/me.jpg
      - assets/images/Logo.png
+     - assets/images/Ellipse.png
+     - assets/images/background.png
+     - assets/images/google_play.png
      - assets/images/social/
      - assets/images/whatIDo/
   #   - images/a_dot_ham.jpeg
