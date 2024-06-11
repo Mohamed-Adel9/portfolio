@@ -8,9 +8,13 @@ class NumberHighlightScreen extends StatefulWidget {
 }
 
 class _NumberHighlightScreenState extends State<NumberHighlightScreen> {
-  List<int> numbers = [1, 2, 3, 4, 5, 6];
+  List<int> numbers = [1, 2, 3, 4, 5, 6,7];
   int? selectedNumber = 1;
   bool isGooglePlay = true;
+
+  //description details
+  List<String> titles = ["ChatEase","Hasanat","My Gallery","NewsCloud","Quran App","Digital wallet","Tut app"];
+  List<List<String>> technologies = [];
 
   void selectNumber(int number) {
     setState(() {
@@ -99,7 +103,9 @@ class _NumberHighlightScreenState extends State<NumberHighlightScreen> {
                   fontFamily: FontHelper.font1,
                   fontWeight: FontWeight.w500,
                 )),
-            SizedBox(height: 15,),
+            const SizedBox(
+              height: 15,
+            ),
             isGooglePlay
                 ? InkWell(
                     onTap: () {
@@ -126,6 +132,24 @@ class _NumberHighlightScreenState extends State<NumberHighlightScreen> {
                     ),
                   ),
           ],
+        ),
+        const Spacer(),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 50.0),
+          child: Stack(
+            children: [
+              //backGround
+              Positioned.fill(
+                  child: Image.asset("assets/images/background.png")),
+
+              //foreground
+              Image.asset(
+                "assets/images/Logo.png",
+                height: 500,
+                width: 500,
+              )
+            ],
+          ),
         ),
       ],
     );
