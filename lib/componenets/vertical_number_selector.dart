@@ -14,7 +14,24 @@ class _NumberHighlightScreenState extends State<NumberHighlightScreen> {
 
   //description details
   List<String> titles = ["ChatEase","Hasanat","My Gallery","NewsCloud","Quran App","Digital wallet","Tut app"];
-  List<List<String>> technologies = [];
+  List<String> description = [
+    "ChatEase is a cutting-edge instant messaging application designed with Flutter, leveraging Firebase as its robust backend. Tailored to provide a seamless and engaging communication experience, ChatEase facilitates real-time messaging between users with an intuitive and user-friendly interface.",
+    "Hassanat is a thoughtfully designed mobile application, crafted using Flutter and available on Google Play. This all-encompassing app serves as a spiritual companion for Muslims, providing a variety of tools and resources to enhance their religious practices and knowledge. With Firebase as its backend, Hassanat ensures a secure, reliable, and seamless user experience.",
+    "My Gallery is an advanced mobile application, crafted using Flutter, that serves as a comprehensive solution for managing your photos and videos. With a dedicated backend for optimal performance, My Gallery offers a rich set of features designed to enhance your media organization and viewing experience.",
+    "NewsCloud is an innovative mobile application, designed with Flutter, that delivers the latest news from around the world straight to your fingertips. Utilizing the powerful News API, NewsCloud provides a seamless and personalized news reading experience",
+    "Quran App is a meticulously crafted mobile application, built using Flutter, that offers a rich and immersive experience for reading, understanding, and reflecting on the Holy Quran. Unlike traditional backend services like Firebase, Quran App operates with a dedicated backend to ensure high performance and reliability.",
+    "Digital Wallet is a cutting-edge mobile application, developed with Flutter, designed to streamline and secure the management of your cards digitally. Whether you need to store payment cards, loyalty cards, or membership cards, Digital Wallet provides a comprehensive and user-friendly platform to keep all your card information in one place",
+    "TutApp is a demonstration mobile application developed using Flutter to illustrate the implementation of the Model-View-ViewModel (MVVM) design pattern. While it doesn't provide a specific service, TutApp serves as an educational tool for developers to understand and practice the MVVM architecture in mobile app development. ",
+  ];
+  List<List<String>> technologies = [
+    ["Flutter","FireBase","FireStore","Messaging","Dart","Figma"],
+    ["Flutter","FireBase","FireStore","Messaging","Dart","Figma","QuranAPI","PrayerTimesAPI"],
+    ["Flutter","Dart","Figma","BackEnd","Notifications"],
+    ["Flutter","CloudAPI","FireStore","Messaging","Dart","Figma"],
+    ["Flutter","Messaging","Dart","Figma","QuranAPI","PrayerTimesAPI"],
+    ["Flutter","LocalDB","Messaging","Dart","Figma"],
+    ["Flutter","MVVM","Dart","Figma","Adobe XD"]
+  ];
 
   void selectNumber(int number) {
     setState(() {
