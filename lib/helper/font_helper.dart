@@ -53,7 +53,7 @@ class FontHelper{
     );
   }
   // SemiBold styles
-  static TextStyle font2SemiBold(double size, {Color color = Colors.black}) {
+  static TextStyle font2SemiBold(double size, {Color color = Colors.white}) {
     return TextStyle(
       fontFamily: font2,
       fontSize: size,

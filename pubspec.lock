@@ -25,6 +25,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.1"
+  carousel_slider:
+    dependency: "direct main"
+    description:
+      name: carousel_slider
+      sha256: "9c695cc963bf1d04a47bd6021f68befce8970bcd61d24938e1fb0918cf5d9c42"
+      url: "https://pub.dev"
+    source: hosted
+    version: "4.2.1"
   characters:
     dependency: transitive
     description:
@@ -78,14 +86,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.0.3"
-  flutter_moving_background:
-    dependency: "direct main"
-    description:
-      name: flutter_moving_background
-      sha256: b2264100cd328c0e92e08538f5bbb2406add6403331c573e0df03bdb2eabc019
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.0.5"
   flutter_test:
     dependency: "direct dev"
     description: flutter

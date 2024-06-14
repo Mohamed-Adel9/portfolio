@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/helper/font_helper.dart';
-
-import 'package:flutter/material.dart';
 
 class CustomContainer extends StatelessWidget {
   final String text;
 
-  const CustomContainer({required this.text});
+  const CustomContainer({super.key, required this.text});
 
   @override
   Widget build(BuildContext context) {
@@ -57,7 +54,6 @@ class UsedTechnology extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: buttonLabels.map((label) => Padding(
         padding: const EdgeInsets.symmetric(horizontal: 8.0),
         child: CustomContainer(text: label),

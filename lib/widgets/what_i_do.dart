@@ -80,6 +80,38 @@ class WhatIDoPage extends StatelessWidget {
                 const SizedBox(
                   height: 80,
                 ),
+                const Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    ProgrammingLangCart(
+                      image: 'assets/images/whatIDo/api.png',
+                      text: "RestFul APIs",
+                    ),
+                    ProgrammingLangCart(
+                      image: 'assets/images/whatIDo/bloc.png',
+                      text: "BLOC",
+                    ),
+                  ],
+                ),
+                const SizedBox(
+                  height: 80,
+                ),
+                const Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    ProgrammingLangCart(
+                      image: 'assets/images/whatIDo/firebase.png',
+                      text: "FireBase",
+                    ),
+                    ProgrammingLangCart(
+                      image: 'assets/images/whatIDo/responsive-page.png',
+                      text: "Responsive Designs",
+                    ),
+                  ],
+                ),
+                const SizedBox(
+                  height: 80,
+                ),
                 InkWell(
                   onTap: () {
                     //todo nav to contact us or whatsapp
@@ -185,6 +217,30 @@ class WhatIDoPage extends StatelessWidget {
                     ProgrammingLangCart(
                       image: 'assets/images/whatIDo/photoshop.png',
                       text: "Photoshop",
+                    ),
+                  ],
+                ),
+                const SizedBox(
+                  height: 60,
+                ),
+                const Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    ProgrammingLangCart(
+                      image: 'assets/images/whatIDo/api.png',
+                      text: "RestFul APIs",
+                    ),
+                    ProgrammingLangCart(
+                      image: 'assets/images/whatIDo/bloc.png',
+                      text: "BLOC",
+                    ),
+                    ProgrammingLangCart(
+                      image: 'assets/images/whatIDo/firebase.png',
+                      text: "Firebase",
+                    ),
+                    ProgrammingLangCart(
+                      image: 'assets/images/whatIDo/responsive-page.png',
+                      text: "Responsive Designs",
                     ),
                   ],
                 ),

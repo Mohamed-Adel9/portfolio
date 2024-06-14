@@ -25,6 +25,7 @@ class ProgrammingLangCart extends StatelessWidget {
           ),
           Text(
             text,
+            textAlign: TextAlign.center,
             style: FontHelper.font1SemiBold(
               18,
               color: Colors.white,
