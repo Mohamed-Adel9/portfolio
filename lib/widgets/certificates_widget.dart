@@ -27,10 +27,17 @@ class CertificatesWidget extends StatelessWidget {
         ),
         Column(
           children: [
-            Text(
-              "Computer Science",
-              style: FontHelper.font1SemiBold(30,color: Colors.white,
-              ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  "Computer Science",
+                  style: FontHelper.font1SemiBold(30,color: Colors.white,
+                  ),
+                ),
+                const SizedBox(width: 5,),
+                Icon(Icons.computer,size: 30,color: Colors.purple.shade500,)
+              ],
             ),
             Text(
               "Helwan-University",
@@ -50,15 +57,23 @@ class CertificatesWidget extends StatelessWidget {
             ),
           ],
         ),
+        const SizedBox(height: 20,),
         Column(
           children: [
-            Text(
-              "Computer Science",
-              style: FontHelper.font1SemiBold(30,color: Colors.white,
-              ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  "Flutter&Dart full Course",
+                  style: FontHelper.font1SemiBold(30,color: Colors.white,
+                  ),
+                ),
+                const SizedBox(width: 5,),
+                const Icon(Icons.mobile_friendly,color: Colors.purple,size: 30,),
+              ],
             ),
             Text(
-              "Helwan-University",
+              "ITI Institution",
               style: FontHelper.font1Regular(22,color: Colors.purple,
               ),
             ),
@@ -68,9 +83,10 @@ class CertificatesWidget extends StatelessWidget {
                 const Icon(
                   Icons.calendar_month,
                   color: Colors.white,
-                  size: 40,
+                  size: 30,
                 ),
-                Text("2020 - 2024",style: FontHelper.font1Regular(22,color: Colors.white,),)
+                const SizedBox(width: 5,),
+                Text("jul.2023-Aug.2023",style: FontHelper.font1Regular(22,color: Colors.white,),)
               ],
             ),
           ],
@@ -90,50 +106,62 @@ class CertificatesWidget extends StatelessWidget {
         ),
         Column(
           children: [
-            Text(
-              "Computer Science",
-              style: FontHelper.font1SemiBold(30,color: Colors.white,
+            SizedBox(
+              width: 400,
+              child: Text(
+                textAlign:TextAlign.center,
+                "The Complete 2022 Flutter&Dart",
+                style: FontHelper.font1SemiBold(30,color: Colors.white,
+                ),
               ),
             ),
             Text(
-              "Helwan-University",
+              "Abdullah Mansour",
               style: FontHelper.font1Regular(22,color: Colors.purple,
               ),
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
+
               children: [
                 const Icon(
                   Icons.calendar_month,
                   color: Colors.white,
-                  size: 40,
+                  size: 30,
                 ),
-                Text("2020 - 2024",style: FontHelper.font1Regular(22,color: Colors.white,),)
+                const SizedBox(width: 5,),
+                Text("jan.2023 - mar.2023",style: FontHelper.font1Regular(22,color: Colors.white,),)
               ],
             ),
           ],
         ),
+        const SizedBox(height: 20,),
         Column(
           children: [
-            Text(
-              "Computer Science",
-              style: FontHelper.font1SemiBold(30,color: Colors.white,
+            SizedBox(
+              width: 400,
+              child: Text(
+                textAlign: TextAlign.center,
+                "Flutter Advanced -MVVM in Arabic",
+                style: FontHelper.font1SemiBold(30,color: Colors.white,
+                ),
               ),
             ),
             Text(
-              "Helwan-University",
+              "Mina Farid",
               style: FontHelper.font1Regular(22,color: Colors.purple,
               ),
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
+
               children: [
                 const Icon(
                   Icons.calendar_month,
                   color: Colors.white,
                   size: 40,
                 ),
-                Text("2020 - 2024",style: FontHelper.font1Regular(22,color: Colors.white,),)
+                Text("Aug.2023 - Oct.2023",style: FontHelper.font1Regular(22,color: Colors.white,),)
               ],
             ),
           ],

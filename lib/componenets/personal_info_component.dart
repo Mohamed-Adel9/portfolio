@@ -20,6 +20,24 @@ class PersonalInfoComponent extends StatelessWidget {
     }
   }
 
+  void _launchEmail({required String toEmail, String subject = '', String body = ''}) async {
+    final Uri emailLaunchUri = Uri(
+      scheme: 'mailto',
+      path: toEmail,
+      queryParameters: {
+        'subject': subject,
+        'body': body,
+      },
+    );
+
+    if (await canLaunchUrl(emailLaunchUri)) {
+      await launchUrl(emailLaunchUri);
+    } else {
+      throw 'Could not launch $emailLaunchUri';
+    }
+  }
+
+
   final String gitHubUrl = 'https://github.com/Mohamed-Adel9';
   final String facebookUrl = 'https://www.facebook.com/vroonny?mibextid=ZbWKwL';
   final String instagramUrl = 'https://www.instagram.com/mohamedadel5533?igsh=NGVhN2U2NjQ0Yg==';
@@ -138,7 +156,7 @@ class PersonalInfoComponent extends StatelessWidget {
                       end: Alignment.centerRight)),
               child: TextButton(
                 onPressed: () {
-                  // todo go to gmail to contact me
+                  _launchEmail(toEmail: "eng.mohamed.adel49@gmail.com",body: "رسالتك",subject: "عنوان الرساله");
                 },
                 child: Text(
                   "GET IN TOUCH",

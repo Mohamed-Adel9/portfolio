@@ -58,6 +58,15 @@ class _PageFourWebState extends State<PageFourWeb> {
     ["Flutter", "LocalDB", "Messaging", "Dart", "Figma"],
     ["Flutter", "MVVM", "Dart", "Figma", "Adobe XD"]
   ];
+  List<String> Links =[
+    "https://github.com/Mohamed-Adel9/chat_ease",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+  ];
 
   void selectNumber(int number) {
     setState(() {

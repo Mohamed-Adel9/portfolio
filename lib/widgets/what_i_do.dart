@@ -1,9 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/componenets/programming_lang_cart.dart';
 import 'package:portfolio/helper/font_helper.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class WhatIDoPage extends StatelessWidget {
   const WhatIDoPage({super.key, this.isMobile = false});
+
+  final String whatsappUrl = 'https://wa.me/+201116450688';
+  Future<void> _linkLauncher(String url) async{
+    if(await canLaunchUrl(Uri.parse(url))){
+      await launchUrl(Uri.parse(url));
+    }
+    else{
+      throw 'coudnt launsh the url';
+    }
+  }
+
 
   final bool isMobile;
 
@@ -114,7 +126,7 @@ class WhatIDoPage extends StatelessWidget {
                 ),
                 InkWell(
                   onTap: () {
-                    //todo nav to contact us or whatsapp
+                    _linkLauncher(whatsappUrl);
                   },
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
@@ -249,7 +261,8 @@ class WhatIDoPage extends StatelessWidget {
                 ),
                 InkWell(
                   onTap: () {
-                    //todo nav to contact us or whatsapp
+                    _linkLauncher(whatsappUrl);
+
                   },
                   child: Column(
                     children: [
