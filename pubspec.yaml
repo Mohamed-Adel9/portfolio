@@ -37,6 +37,8 @@ dependencies:
   cupertino_icons: ^1.0.2
   animated_text_kit: ^4.2.2
   carousel_slider: ^4.2.1
+  flutter_bloc: ^8.1.6
+  url_launcher: ^6.3.0
 
 
 

@@ -78,7 +78,7 @@ class WhatIDoPage extends StatelessWidget {
                   ],
                 ),
                 const SizedBox(
-                  height: 80,
+                  height: 30,
                 ),
                 const Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -94,7 +94,7 @@ class WhatIDoPage extends StatelessWidget {
                   ],
                 ),
                 const SizedBox(
-                  height: 80,
+                  height: 30,
                 ),
                 const Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,

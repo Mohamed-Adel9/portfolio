@@ -33,6 +33,15 @@ class PageFourMob extends StatelessWidget {
     "Digital Wallet is a cutting-edge mobile application, developed with Flutter, designed to streamline and secure the management of your cards digitally. Whether you need to store payment cards, loyalty cards, or membership cards, Digital Wallet provides a comprehensive and user-friendly platform to keep all your card information in one place",
     "TutApp is a demonstration mobile application developed using Flutter to illustrate the implementation of the Model-View-ViewModel (MVVM) design pattern. While it doesn't provide a specific service, TutApp serves as an educational tool for developers to understand and practice the MVVM architecture in mobile app development. ",
   ];
+  List<String> images = [
+    "assets/images/projects/chatEase.png",
+    "assets/images/projects/hassanat.png",
+    "assets/images/projects/gallery.png",
+    "assets/images/projects/news.png",
+    "assets/images/projects/quran.png",
+    "assets/images/projects/wallet.png",
+    "assets/images/projects/tut.png"
+  ];
 
   final List<List<String>> technologies = [
     ["Flutter", "FireBase", "FireStore", "Messaging", "Dart", "Figma"],
@@ -98,7 +107,11 @@ class PageFourMob extends StatelessWidget {
                           ),
 
                           //foreground
-                          Image.asset("assets/images/Logo.png")
+                          Image.asset(
+                            images[i - 1],
+                            height: 400,
+                            width: 400,
+                          )
                         ],
                       ),
                     ),

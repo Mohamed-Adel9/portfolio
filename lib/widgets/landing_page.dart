@@ -34,8 +34,7 @@ class LandingPage extends StatelessWidget {
               radius: 400, // Adjust as needed
               backgroundColor:
                   Colors.transparent, // Make the background transparent
-              // Optionally, you can add a child widget to the CircleAvatar
-              //child: Icon(Icons.person),
+
             ),
           ),
         ],

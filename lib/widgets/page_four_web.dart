@@ -23,12 +23,12 @@ class _PageFourWebState extends State<PageFourWeb> {
   ];
   List<String> images = [
     "assets/images/projects/chatEase.png",
-    "assets/images/projects/gallery.png",
+    "assets/images/projects/hassanat.png",
     "assets/images/projects/gallery.png",
     "assets/images/projects/news.png",
     "assets/images/projects/quran.png",
-    "assets/images/projects/quran.png",
-    "assets/images/projects/quran.png"
+    "assets/images/projects/wallet.png",
+    "assets/images/projects/tut.png"
   ];
   List<bool> isGooglePlay = [false,true,false,false,false,false,false];
   List<String> description = [

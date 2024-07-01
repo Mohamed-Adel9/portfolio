@@ -1,7 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class GlowingButton extends StatelessWidget {
   const GlowingButton({super.key});
+
+  final String url = "https://drive.google.com/file/d/1IvLj9-VHjQbXarumwjmLUo8_UyGA2pUg/view?usp=drive_link";
+
+
+  Future<void> _cvLauncher(String url) async{
+    if(await canLaunchUrl(Uri.parse(url))){
+      await launchUrl(Uri.parse(url));
+    }
+    else{
+      throw 'coudnt launsh the url';
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +38,9 @@ class GlowingButton extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
           elevation: 5,
         ),
-        onPressed: () {},
+        onPressed: () {
+          _cvLauncher(url);
+        },
         child: const Text('Resume'),
       ),
     );

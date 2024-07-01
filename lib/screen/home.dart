@@ -3,7 +3,11 @@ import 'package:portfolio/widgets/nav_bar_widget.dart';
 import 'package:portfolio/widgets/screen_builder.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+  HomeScreen({super.key});
+
+  ScrollController scrollController = ScrollController();
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -12,8 +16,8 @@ class HomeScreen extends StatelessWidget {
       body: SafeArea(
         child: Column(
           children: [
-            const NavBarWidget(),
-            ScreenBuilder(),
+            NavBarWidget(scrollController: scrollController,),
+            ScreenBuilder(scrollController: scrollController,),
           ],
         ),
       ),

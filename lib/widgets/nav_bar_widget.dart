@@ -2,13 +2,27 @@ import 'package:flutter/material.dart';
 import 'package:portfolio/componenets/glowing_button.dart';
 import 'package:portfolio/componenets/my_text_button.dart';
 import 'package:portfolio/helper/font_helper.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class NavBarWidget extends StatelessWidget {
-  const NavBarWidget({
+   const NavBarWidget({
     super.key,
+    required this.scrollController
   });
 
-  @override
+
+  final  ScrollController scrollController ;
+   void scrollPosition (double position){
+     scrollController.animateTo(
+         position,
+         duration: const Duration(seconds: 1),
+         curve: Curves.easeInOut
+     );
+   }
+
+
+
+   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (context, constraints) {
@@ -21,15 +35,30 @@ class NavBarWidget extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Image.asset("assets/images/Logo.png",fit: BoxFit.cover,height: 60,width: 130,),
+                  InkWell(
+                    onTap: (){
+                      scrollPosition(0);
+                    },
+                      child: Image.asset("assets/images/Logo.png",fit: BoxFit.cover,height: 60,width: 130,)),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
-                      MyTextButtonTextWidget(text: "About", onPressed: () {}),
-                      MyTextButtonTextWidget(text: "Services", onPressed: () {}),
-                      MyTextButtonTextWidget(text: "Projects", onPressed: () {}),
+                      MyTextButtonTextWidget(text: "About", onPressed: () {
+                        scrollPosition(500);
+                      }),
+                      MyTextButtonTextWidget(text: "Services", onPressed: () {
+                        scrollPosition(1000);
+
+                      }),
+                      MyTextButtonTextWidget(text: "Projects", onPressed: () {
+                        scrollPosition(2000);
+
+                      }),
                       MyTextButtonTextWidget(
-                          text: "Recommendations", onPressed: () {}),
+                          text: "ContactMe", onPressed: () {
+                        scrollPosition(2500);
+
+                      }),
                       const SizedBox(
                         width: 30.0,
                       ),
@@ -52,30 +81,46 @@ class NavBarWidget extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Row(
-                  children: [
-                    Image.asset("assets/images/Logo.png",fit: BoxFit.cover,height: 60,width: 100,),
-                    Text("Mohamed Adel",style: FontHelper.font1Regular(18,color: Colors.white),)
-                  ],
+                InkWell(
+                  onTap: (){
+                    scrollPosition(0);
+                  },
+                  child: Row(
+                    children: [
+                      Image.asset("assets/images/Logo.png",fit: BoxFit.cover,height: 60,width: 100,),
+                      Text("Mohamed Adel",style: FontHelper.font1Regular(18,color: Colors.white),)
+                    ],
+                  ),
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     MyTextButtonTextWidget(
                       text: "About",
-                      onPressed: () {},
+                      onPressed: () {
+                        scrollPosition(710);
+                      },
                     ),
                     MyTextButtonTextWidget(
                       text: "Services",
-                      onPressed: () {},
+                      onPressed: () {
+                        scrollPosition(1400);
+
+                      },
                     ),
                     MyTextButtonTextWidget(
                       text: "Projects",
-                      onPressed: () {},
+                      onPressed: () {
+                        scrollPosition(3030);
+
+                      },
                     ),
                     MyTextButtonTextWidget(
-                      text: "Recommendations",
-                      onPressed: () {},
+                      text: "ContactMe",
+                      onPressed: () {
+                        scrollPosition(3600);
+
+                      },
                     ),
                     const SizedBox(
                       width: 30.0,

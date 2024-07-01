@@ -1,6 +1,7 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolio/helper/font_helper.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class PersonalInfoComponent extends StatelessWidget {
   const PersonalInfoComponent({
@@ -10,6 +11,22 @@ class PersonalInfoComponent extends StatelessWidget {
 
   final bool isMobile ;
 
+  Future<void> _linkLauncher(String url) async{
+    if(await canLaunchUrl(Uri.parse(url))){
+      await launchUrl(Uri.parse(url));
+    }
+    else{
+      throw 'coudnt launsh the url';
+    }
+  }
+
+  final String gitHubUrl = 'https://github.com/Mohamed-Adel9';
+  final String facebookUrl = 'https://www.facebook.com/vroonny?mibextid=ZbWKwL';
+  final String instagramUrl = 'https://www.instagram.com/mohamedadel5533?igsh=NGVhN2U2NjQ0Yg==';
+  final String linkedInUrl = 'https://www.linkedin.com/in/mohamed-adel-4baa19249';
+  final String whatsappUrl = 'https://wa.me/+201116450688';
+
+  //todo gmail
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -25,7 +42,7 @@ class PersonalInfoComponent extends StatelessWidget {
             ).createShader(bounds);
           },
           child: Text(
-            "Hello, I'M Mohamed",
+            "Hello, I'M Mohamed Adel",
             style: TextStyle(
               fontSize: isMobile ?  30.0 : 36.0,
               color: Colors.white,
@@ -142,7 +159,7 @@ class PersonalInfoComponent extends StatelessWidget {
               ),
               child: TextButton(
                 onPressed: () {
-                  // todo go to gmail to contact me
+                  _linkLauncher(gitHubUrl);
                 },
                 style: TextButton.styleFrom(
                   shape: const StadiumBorder(
@@ -180,7 +197,7 @@ class PersonalInfoComponent extends StatelessWidget {
                       end: Alignment.centerRight)),
               child: TextButton(
                 onPressed: () {
-                  // todo nav to facebook
+                  _linkLauncher(facebookUrl);
                 },
                 child: Image.asset(
                   "assets/images/social/facebook.png",
@@ -190,7 +207,7 @@ class PersonalInfoComponent extends StatelessWidget {
             ),
             TextButton(
               onPressed: () {
-                // todo nav to instagram
+                _linkLauncher(instagramUrl);
               },
               child: SizedBox(
                 width: 50,
@@ -203,7 +220,7 @@ class PersonalInfoComponent extends StatelessWidget {
             ),
             TextButton(
               onPressed: () {
-                // todo nav to linkedin
+                _linkLauncher(linkedInUrl);
               },
               child: SizedBox(
                 width: 40,
@@ -217,7 +234,7 @@ class PersonalInfoComponent extends StatelessWidget {
             ),
             TextButton(
               onPressed: () {
-                // todo nav to GitHub
+                _linkLauncher(gitHubUrl);
               },
               child: Image.asset(
                 "assets/images/social/github.png",
@@ -230,7 +247,7 @@ class PersonalInfoComponent extends StatelessWidget {
             ),
             TextButton(
               onPressed: () {
-                // todo nav to whatsapp
+                _linkLauncher(whatsappUrl);
               },
               child: Image.asset(
                 "assets/images/social/wahtsapp.png",
