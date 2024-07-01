@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/componenets/used_technology.dart';
 import 'package:portfolio/helper/font_helper.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class PageFourWeb extends StatefulWidget {
   @override
@@ -10,6 +11,16 @@ class PageFourWeb extends StatefulWidget {
 class _PageFourWebState extends State<PageFourWeb> {
   List<int> numbers = [1, 2, 3, 4, 5, 6, 7];
   int? selectedNumber = 1;
+
+  Future<void> _linkLauncher(String url) async{
+    if(await canLaunchUrl(Uri.parse(url))){
+      await launchUrl(Uri.parse(url));
+    }
+    else{
+      throw 'coudnt launsh the url';
+    }
+  }
+
 
   //description details
   List<String> titles = [
@@ -58,14 +69,14 @@ class _PageFourWebState extends State<PageFourWeb> {
     ["Flutter", "LocalDB", "Messaging", "Dart", "Figma"],
     ["Flutter", "MVVM", "Dart", "Figma", "Adobe XD"]
   ];
-  List<String> Links =[
+  List<String> links =[
     "https://github.com/Mohamed-Adel9/chat_ease",
-    "",
-    "",
-    "",
-    "",
-    "",
-    "",
+    "https://github.com/Mohamed-Adel9/hassanat",
+    "https://github.com/Mohamed-Adel9/gallery",
+    "https://github.com/Mohamed-Adel9/news_app",
+    "https://github.com/Mohamed-Adel9/Quran-app",
+    "https://github.com/Mohamed-Adel9/Digital-wallet",
+    "https://github.com/Mohamed-Adel9/Tut-App",
   ];
 
   void selectNumber(int number) {
@@ -163,7 +174,7 @@ class _PageFourWebState extends State<PageFourWeb> {
               isGooglePlay[selectedNumber! - 1]
                   ? InkWell(
                   onTap: () {
-                    //todo nav to google play
+                    _linkLauncher("https://play.google.com/store/apps/details?id=hasanat.app.com");
                   },
                   child: Image.asset("assets/images/google_play.png"))
                   : Container(
@@ -176,7 +187,7 @@ class _PageFourWebState extends State<PageFourWeb> {
                 ),
                 child: TextButton(
                   onPressed: () {
-                    // todo nav to github project link
+                    _linkLauncher(links[selectedNumber! -1]);
                   },
                   child: Text(
                     "GitHub Link",

@@ -2,8 +2,22 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolio/componenets/used_technology.dart';
 import 'package:portfolio/helper/font_helper.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class PageFourMob extends StatelessWidget {
+
+  Future<void> _linkLauncher(String url) async{
+    if(await canLaunchUrl(Uri.parse(url))){
+      await launchUrl(Uri.parse(url));
+    }
+    else{
+      throw 'coudnt launsh the url';
+    }
+  }
+
+
+
+
   final List<String> titles = [
     "ChatEase",
     "Hasanat",
@@ -13,6 +27,7 @@ class PageFourMob extends StatelessWidget {
     "Digital wallet",
     "Tut app"
   ];
+
 
   final List<bool> isGooglePlay = [
     false,
@@ -42,6 +57,16 @@ class PageFourMob extends StatelessWidget {
     "assets/images/projects/wallet.png",
     "assets/images/projects/tut.png"
   ];
+  List<String> links =[
+    "https://github.com/Mohamed-Adel9/chat_ease",
+    "https://github.com/Mohamed-Adel9/hassanat",
+    "https://github.com/Mohamed-Adel9/gallery",
+    "https://github.com/Mohamed-Adel9/news_app",
+    "https://github.com/Mohamed-Adel9/Quran-app",
+    "https://github.com/Mohamed-Adel9/Digital-wallet",
+    "https://github.com/Mohamed-Adel9/Tut-App",
+  ];
+
 
   final List<List<String>> technologies = [
     ["Flutter", "FireBase", "FireStore", "Messaging", "Dart", "Figma"],
@@ -133,7 +158,7 @@ class PageFourMob extends StatelessWidget {
                   isGooglePlay[i - 1]
                       ? InkWell(
                           onTap: () {
-                            //todo nav to google play
+                            _linkLauncher("https://play.google.com/store/apps/details?id=hasanat.app.com");
                           },
                           child: Image.asset(
                             "assets/images/google_play.png",
@@ -151,7 +176,7 @@ class PageFourMob extends StatelessWidget {
                           ),
                           child: TextButton(
                             onPressed: () {
-                              // todo nav to github project link
+                              _linkLauncher(links[i -1]);
                             },
                             child: Text(
                               "GitHub Link",

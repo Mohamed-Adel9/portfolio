@@ -105,7 +105,7 @@ class Fotter extends StatelessWidget {
                   ),
                 ),
               ),
-              Text(" CopyRight c 2024 ",style: FontHelper.font1Regular(17,color: Colors.white),),
+              Text(" CopyRight © 2024 ",style: FontHelper.font1Regular(17,color: Colors.white),),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -247,7 +247,7 @@ class Fotter extends StatelessWidget {
                   ),
                 ),
               ),
-              Text(" CopyRight c 2024 - All Rights received || Designed By : ",style: FontHelper.font1Regular(17,color: Colors.white),),
+              Text(" CopyRight © 2024 - All Rights received || Designed By : ",style: FontHelper.font1Regular(17,color: Colors.white),),
               ShaderMask(
                 shaderCallback: (Rect bounds) {
                   return const LinearGradient(
