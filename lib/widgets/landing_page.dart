@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/componenets/personal_info_component.dart';
+import 'package:portfolio/components/personal_info_component.dart';
 
 class LandingPage extends StatelessWidget {
   const LandingPage({

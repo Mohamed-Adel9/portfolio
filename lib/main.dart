@@ -4,7 +4,7 @@ import 'package:portfolio/firebase_options.dart';
 import 'package:portfolio/helper/font_helper.dart';
 import 'package:portfolio/screen/home.dart';
 
-void main()async {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
@@ -22,12 +22,9 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         fontFamily: FontHelper.font1,
-
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
       home: HomeScreen(),
     );
   }
 }
-

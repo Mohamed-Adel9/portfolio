@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/componenets/about_me_text.dart';
-import 'package:portfolio/componenets/my_separator.dart';
-import 'package:portfolio/componenets/personal_info_component.dart';
+import 'package:portfolio/components/about_me_text.dart';
+import 'package:portfolio/components/my_separator.dart';
+import 'package:portfolio/components/personal_info_component.dart';
 import 'package:portfolio/widgets/certificates_widget.dart';
 import 'package:portfolio/widgets/contact_us.dart';
 import 'package:portfolio/widgets/fotter.dart';

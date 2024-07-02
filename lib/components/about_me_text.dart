@@ -6,6 +6,7 @@ class AboutMeText extends StatelessWidget {
     super.key,
     this.isMobile = false,
   });
+
   final bool isMobile;
 
   final List<String> texts = [

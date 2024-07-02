@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/componenets/glowing_button.dart';
-import 'package:portfolio/componenets/my_text_button.dart';
+import 'package:portfolio/components/glowing_button.dart';
+import 'package:portfolio/components/my_text_button.dart';
 import 'package:portfolio/helper/font_helper.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 class NavBarWidget extends StatelessWidget {
    const NavBarWidget({
