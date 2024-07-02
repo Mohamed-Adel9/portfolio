@@ -1,24 +1,75 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolio/helper/font_helper.dart';
+import 'package:url_launcher/url_launcher.dart';
 
-class contact_us extends StatelessWidget {
-   contact_us({
+class ContactUs extends StatelessWidget {
+  const ContactUs({
     super.key,
     required GlobalKey<FormState> formKey,
     required TextEditingController nameController,
     required TextEditingController emailController,
     required TextEditingController messageController,
     required this.isMobile ,
-  }) : _formKey = formKey, _nameController = nameController, _emailController = emailController, _messageController = messageController;
+  }) :  _formKey = formKey,
+        _nameController = nameController,
+        _emailController = emailController,
+        _messageController = messageController;
 
-  final GlobalKey<FormState> _formKey;
+  final GlobalKey<FormState>  _formKey;
   final TextEditingController _nameController;
   final TextEditingController _emailController;
   final TextEditingController _messageController;
-  bool isMobile ;
+  final bool isMobile ;
 
-  @override
-  Widget build(BuildContext context) {
+   final String whatsappUrl = 'https://wa.me/+201116450688';
+
+   Future<void> _linkLauncher(String url) async{
+     if(await canLaunchUrl(Uri.parse(url))){
+       await launchUrl(Uri.parse(url));
+     }
+     else{
+       throw 'coudnt launsh the url';
+     }
+   }
+
+   void _launchEmail({required String toEmail, String subject = '', String body = ''}) async {
+     final Uri emailLaunchUri = Uri(
+       scheme: 'mailto',
+       path: toEmail,
+       queryParameters: {
+         'subject': subject,
+         'body': body,
+       },
+     );
+
+     if (await canLaunchUrl(emailLaunchUri)) {
+       await launchUrl(emailLaunchUri);
+     } else {
+       throw 'Could not launch $emailLaunchUri';
+     }
+   }
+
+   void _saveDataToFirestore(context) async {
+     try {
+       await FirebaseFirestore.instance.collection('mails').add({
+         'email':_emailController.text,
+         'msg' : _messageController.text,
+         'name': _nameController.text,
+         'time': FieldValue.serverTimestamp(),
+       });
+       ScaffoldMessenger.of(context).showSnackBar(
+         const SnackBar(content: Text('message sent successfully!')),
+       );
+     } catch (e) {
+       ScaffoldMessenger.of(context).showSnackBar(
+         const SnackBar(content: Text('Failed to sent the message')),
+       );
+     }
+   }
+
+   @override
+   build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 50.0),
       child: isMobile ? Padding(
@@ -81,7 +132,7 @@ class contact_us extends StatelessWidget {
                     ),
                     TextButton(
                       onPressed: () {
-                        // todo nav to gmail
+                        _launchEmail(toEmail: "eng.mohamed.adel49@gmail.com");
                       },
                       child: Text(
                         "eng.mohamed.adel49@gmail.com",
@@ -105,7 +156,7 @@ class contact_us extends StatelessWidget {
                     ),
                     TextButton(
                       onPressed: () {
-                        // todo nav to whatsapp
+                        _linkLauncher(whatsappUrl);
                       },
                       child: Text(
                         "+201116450688",
@@ -244,7 +295,9 @@ class contact_us extends StatelessWidget {
                                 end: Alignment.centerRight)),
                         child: TextButton(
                           onPressed: () {
-                            // todo call validate here
+                            if (_formKey.currentState!.validate()) {
+                              _saveDataToFirestore(context);
+                            }
                           },
                           child: Text(
                             "Confirm",
@@ -323,7 +376,7 @@ class contact_us extends StatelessWidget {
                   ),
                   TextButton(
                     onPressed: () {
-                      // todo nav to gmail
+                      _launchEmail(toEmail: "eng.mohamed.adel49@gmail.com");
                     },
                     child: Text(
                       "eng.mohamed.adel49@gmail.com",
@@ -347,7 +400,7 @@ class contact_us extends StatelessWidget {
                   ),
                   TextButton(
                     onPressed: () {
-                      // todo nav to whatsapp
+                      _linkLauncher(whatsappUrl);
                     },
                     child: Text(
                       "+201116450688",
@@ -478,7 +531,9 @@ class contact_us extends StatelessWidget {
                             end: Alignment.centerRight)),
                     child: TextButton(
                       onPressed: () {
-                        // todo go to gmail to contact me
+                        if (_formKey.currentState!.validate()) {
+                          _saveDataToFirestore(context);
+                        }
                       },
                       child: Text(
                         "Confirm",

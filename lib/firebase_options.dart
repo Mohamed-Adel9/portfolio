@@ -56,6 +56,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '212756282143',
     projectId: 'portfolio-f9007',
     authDomain: 'portfolio-f9007.firebaseapp.com',
+    databaseURL: 'https://portfolio-f9007-default-rtdb.europe-west1.firebasedatabase.app',
     storageBucket: 'portfolio-f9007.appspot.com',
     measurementId: 'G-8EFXWHPP08',
   );
@@ -65,6 +66,8 @@ class DefaultFirebaseOptions {
     appId: '1:212756282143:android:36fed323f4bc29326fce2a',
     messagingSenderId: '212756282143',
     projectId: 'portfolio-f9007',
+    databaseURL: 'https://portfolio-f9007-default-rtdb.europe-west1.firebasedatabase.app',
     storageBucket: 'portfolio-f9007.appspot.com',
   );
+
 }

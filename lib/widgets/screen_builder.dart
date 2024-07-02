@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/componenets/about_me_text.dart';
 import 'package:portfolio/componenets/my_separator.dart';
-import 'package:portfolio/componenets/my_text_button.dart';
 import 'package:portfolio/componenets/personal_info_component.dart';
-import 'package:portfolio/helper/font_helper.dart';
 import 'package:portfolio/widgets/certificates_widget.dart';
 import 'package:portfolio/widgets/contact_us.dart';
 import 'package:portfolio/widgets/fotter.dart';
@@ -115,7 +113,7 @@ class ScreenBuilder extends StatelessWidget {
                       const MySeparator(text: "Contact Me"),
 
                       // contact me
-                      contact_us(
+                      ContactUs(
                         isMobile: true,
                         formKey: _formKey,
                         nameController: _nameController,
@@ -191,7 +189,7 @@ class ScreenBuilder extends StatelessWidget {
                       ),
 
                       //contact me
-                      contact_us(
+                      ContactUs(
                         isMobile:false,
                         formKey: _formKey,
                         nameController: _nameController,
