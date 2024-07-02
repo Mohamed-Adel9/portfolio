@@ -4,15 +4,15 @@ import 'package:url_launcher/url_launcher.dart';
 class GlowingButton extends StatelessWidget {
   const GlowingButton({super.key});
 
-  final String url = "https://drive.google.com/file/d/1IvLj9-VHjQbXarumwjmLUo8_UyGA2pUg/view?usp=drive_link";
+  //todo in future update to new cv link
+  final String url =
+      "https://drive.google.com/file/d/1IvLj9-VHjQbXarumwjmLUo8_UyGA2pUg/view?usp=drive_link";
 
-
-  Future<void> _cvLauncher(String url) async{
-    if(await canLaunchUrl(Uri.parse(url))){
+  Future<void> _cvLauncher(String url) async {
+    if (await canLaunchUrl(Uri.parse(url))) {
       await launchUrl(Uri.parse(url));
-    }
-    else{
-      throw 'coudnt launsh the url';
+    } else {
+      throw "couldn't launsh the url";
     }
   }
 

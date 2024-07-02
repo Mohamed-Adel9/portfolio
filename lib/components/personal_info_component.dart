@@ -6,17 +6,18 @@ import 'package:url_launcher/url_launcher.dart';
 class PersonalInfoComponent extends StatelessWidget {
   const PersonalInfoComponent({
     super.key,
-     this.isMobile = false,
+    this.isMobile = false,
   });
 
-  final bool isMobile ;
+  final bool isMobile;
 
-  Future<void> _linkLauncher(String url) async{
-    if(await canLaunchUrl(Uri.parse(url))){
-      await launchUrl(Uri.parse(url));
-    }
-    else{
-      throw 'coudnt launsh the url';
+  Future<void> _linkLauncher(String url) async {
+    final Uri uri = Uri.parse(url);
+
+    if (await canLaunchUrl(uri)) {
+      await launchUrl(uri, mode: LaunchMode.externalApplication);
+    } else {
+      throw "Couldn't launch the url";
     }
   }
 
@@ -37,18 +38,16 @@ class PersonalInfoComponent extends StatelessWidget {
     }
   }
 
-
   final String gitHubUrl = 'https://github.com/Mohamed-Adel9';
   final String facebookUrl = 'https://www.facebook.com/vroonny?mibextid=ZbWKwL';
   final String instagramUrl = 'https://www.instagram.com/mohamedadel5533?igsh=NGVhN2U2NjQ0Yg==';
   final String linkedInUrl = 'https://www.linkedin.com/in/mohamed-adel-4baa19249';
   final String whatsappUrl = 'https://wa.me/+201116450688';
 
-  //todo gmail
   @override
   Widget build(BuildContext context) {
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
+      crossAxisAlignment: isMobile? CrossAxisAlignment.center : CrossAxisAlignment.start,
       children: [
         ShaderMask(
           shaderCallback: (Rect bounds) {
@@ -62,7 +61,7 @@ class PersonalInfoComponent extends StatelessWidget {
           child: Text(
             "Hello, I'M Mohamed Adel",
             style: TextStyle(
-              fontSize: isMobile ?  30.0 : 36.0,
+              fontSize: isMobile ? 30.0 : 36.0,
               color: Colors.white,
               fontFamily: FontHelper.font2,
               fontWeight: FontWeight.w900,
@@ -129,7 +128,8 @@ class PersonalInfoComponent extends StatelessWidget {
         ),
         Text(
           "FROM EGYPT",
-          style: FontHelper.font2Bold(isMobile ? 30.0 : 40.0, color: Colors.white),
+          style:
+              FontHelper.font2Bold(isMobile ? 30.0 : 40.0, color: Colors.white),
         ),
         const SizedBox(
           height: 30,
@@ -144,6 +144,7 @@ class PersonalInfoComponent extends StatelessWidget {
           ),
         ),
         Row(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Container(
               height: 50,
@@ -156,7 +157,10 @@ class PersonalInfoComponent extends StatelessWidget {
                       end: Alignment.centerRight)),
               child: TextButton(
                 onPressed: () {
-                  _launchEmail(toEmail: "eng.mohamed.adel49@gmail.com",body: "رسالتك",subject: "عنوان الرساله");
+                  _launchEmail(
+                      toEmail: "eng.mohamed.adel49@gmail.com",
+                      body: "",
+                      subject: "");
                 },
                 child: Text(
                   "GET IN TOUCH",
@@ -202,6 +206,8 @@ class PersonalInfoComponent extends StatelessWidget {
           height: 35,
         ),
         Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+
           children: [
             Container(
               height: 40,
@@ -232,7 +238,7 @@ class PersonalInfoComponent extends StatelessWidget {
                 height: 50,
                 child: Image.asset(
                   "assets/images/social/instagram.png",
-                 fit: BoxFit.cover,
+                  fit: BoxFit.cover,
                 ),
               ),
             ),
@@ -246,7 +252,6 @@ class PersonalInfoComponent extends StatelessWidget {
                 child: Image.asset(
                   "assets/images/social/linkedin.png",
                   fit: BoxFit.cover,
-
                 ),
               ),
             ),
@@ -260,7 +265,6 @@ class PersonalInfoComponent extends StatelessWidget {
                 color: Colors.white,
                 width: 50,
                 height: 50,
-
               ),
             ),
             TextButton(
@@ -272,11 +276,8 @@ class PersonalInfoComponent extends StatelessWidget {
                 fit: BoxFit.cover,
                 width: 45,
                 height: 45,
-
               ),
             ),
-
-
           ],
         ),
       ],

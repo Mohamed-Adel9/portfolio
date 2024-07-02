@@ -34,34 +34,12 @@ class NavBarWidget extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  InkWell(
-                    onTap: (){
-                      scrollPosition(0);
-                    },
-                      child: Image.asset("assets/images/Logo.png",fit: BoxFit.cover,height: 60,width: 130,)),
-                  Column(
+                  Image.asset("assets/images/Logo.png",fit: BoxFit.cover,height: 60,width: 130,),
+                  const Column(
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
-                      MyTextButtonTextWidget(text: "About", onPressed: () {
-                        scrollPosition(500);
-                      }),
-                      MyTextButtonTextWidget(text: "Services", onPressed: () {
-                        scrollPosition(1000);
 
-                      }),
-                      MyTextButtonTextWidget(text: "Projects", onPressed: () {
-                        scrollPosition(2000);
-
-                      }),
-                      MyTextButtonTextWidget(
-                          text: "ContactMe", onPressed: () {
-                        scrollPosition(2500);
-
-                      }),
-                      const SizedBox(
-                        width: 30.0,
-                      ),
-                      const Padding(
+                      Padding(
                         padding:
                             EdgeInsets.symmetric(horizontal: 18.0, vertical: 18.0),
                         child: GlowingButton(),
@@ -73,7 +51,32 @@ class NavBarWidget extends StatelessWidget {
             ),
           );
         }
-        //for web and tablets
+        else if (constraints.maxWidth > 600 && constraints.maxWidth < 1200) {
+          return Align(
+            alignment: Alignment.topRight,
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 18.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Image.asset("assets/images/Logo.png",fit: BoxFit.cover,height: 60,width: 130,),
+                  const Column(
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: [
+
+                      Padding(
+                        padding:
+                            EdgeInsets.symmetric(horizontal: 18.0, vertical: 18.0),
+                        child: GlowingButton(),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+          );
+        }
+        //for web
         else {
           return Padding(
             padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 10),

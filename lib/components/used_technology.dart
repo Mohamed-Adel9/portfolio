@@ -54,10 +54,12 @@ class UsedTechnology extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
-      children: buttonLabels.map((label) => Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 8.0),
-        child: CustomContainer(text: label),
-      )).toList(),
+      children: buttonLabels
+          .map((label) => Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                child: CustomContainer(text: label),
+              ))
+          .toList(),
     );
   }
 }

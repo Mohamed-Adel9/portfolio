@@ -91,7 +91,7 @@ class PageFourMob extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 18.0),
       child: CarouselSlider(
         options: CarouselOptions(
-          height: 960.0,
+          height: 970.0,
           enlargeCenterPage: true,
           autoPlay: false,
           aspectRatio: 16 / 9,
@@ -131,10 +131,12 @@ class PageFourMob extends StatelessWidget {
                           ),
 
                           //foreground
-                          Image.asset(
-                            images[i - 1],
-                            height: 400,
-                            width: 400,
+                          Center(
+                            child: Image.asset(
+                              images[i - 1],
+                              height: 400,
+                              width: 400,
+                            ),
                           )
                         ],
                       ),

@@ -39,46 +39,13 @@ class Fotter extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return isMobile ? Container(
-      height : 400,
+      height : 200,
       width: MediaQuery.of(context).size.width,
       color: const Color(0xFF1B1B1B),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              MyTextButtonTextWidget(
-                text: "About",
-                onPressed: () {
-                  scrollPosition(500);
-                },
-              ),
-              MyTextButtonTextWidget(
-                text: "Services",
-                onPressed: () {
-                  scrollPosition(1500);
-
-                },
-              ),
-              MyTextButtonTextWidget(
-                text: "Projects",
-                onPressed: () {
-                  scrollPosition(2500);
-
-                },
-              ),
-              MyTextButtonTextWidget(
-                text: "ContactMe",
-                onPressed: () {
-                  scrollPosition(3000);
-
-                },
-              ),
-
-            ],
-          ),
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -173,13 +140,41 @@ class Fotter extends StatelessWidget {
 
                 ),
               ),
+              TextButton(
+                onPressed: () {
+                  _linkLauncher(linkedInUrl);
+                },
+                child: SizedBox(
+                  width: 30,
+                  height: 30,
+                  child: Image.asset(
+                    "assets/images/social/linkedin.png",
+                    fit: BoxFit.cover,
+                    filterQuality: FilterQuality.medium,
+
+                  ),
+                ),
+              ),
+              TextButton(
+                onPressed: () {
+                  _linkLauncher(whatsappUrl);
+                },
+                child: Image.asset(
+                  "assets/images/social/wahtsapp.png",
+                  fit: BoxFit.cover,
+                  width: 40,
+                  height: 40,
+
+                ),
+              ),
             ],
           ),
 
 
         ],
       ),
-    ) : Container(
+    ) :
+    Container(
       height : 150,
       width: MediaQuery.of(context).size.width,
       color: const Color(0xFF1B1B1B),

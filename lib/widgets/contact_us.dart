@@ -283,28 +283,30 @@ class ContactUs extends StatelessWidget {
                     ),
                     const SizedBox(height: 50,),
                     Center(
-                      child: Container(
-                        height: 50,
+                      child: Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 10),
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(25),
-                            gradient: const LinearGradient(
-                                colors: [Colors.purple, Colors.deepOrange, Colors.amber],
-                                stops: [0.0, .8, 1.0],
-                                begin: Alignment.centerLeft,
-                                end: Alignment.centerRight)),
-                        child: TextButton(
-                          onPressed: () {
-                            if (_formKey.currentState!.validate()) {
-                              _saveDataToFirestore(context);
-                            }
-                          },
-                          child: Text(
-                            "Confirm",
+                        child: Container(
+                          height: 50,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(25),
+                              gradient: const LinearGradient(
+                                  colors: [Colors.purple, Colors.deepOrange, Colors.amber],
+                                  stops: [0.0, .8, 1.0],
+                                  begin: Alignment.centerLeft,
+                                  end: Alignment.centerRight)),
+                          child: TextButton(
+                            onPressed: () {
+                              if (_formKey.currentState!.validate()) {
+                                _saveDataToFirestore(context);
+                              }
+                            },
+                            child: Text(
+                              "Confirm",
 
-                            style: FontHelper.font1SemiBold(
-                              18.0,
-                              color: Colors.white,
+                              style: FontHelper.font1SemiBold(
+                                18.0,
+                                color: Colors.white,
+                              ),
                             ),
                           ),
                         ),

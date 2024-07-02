@@ -57,15 +57,20 @@ class CertificatesWidget extends StatelessWidget {
             ),
           ],
         ),
-        const SizedBox(height: 20,),
+        const SizedBox(height: 40,),
         Column(
           children: [
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text(
-                  "Flutter&Dart full Course",
-                  style: FontHelper.font1SemiBold(30,color: Colors.white,
+                SizedBox(
+                  width: MediaQuery.of(context).size.width*.65,
+                  child: Text(
+                    textAlign:TextAlign.center,
+
+                    "Flutter&Dart full Course",
+                    style: FontHelper.font1SemiBold(30,color: Colors.white,
+                    ),
                   ),
                 ),
                 const SizedBox(width: 5,),
@@ -107,7 +112,7 @@ class CertificatesWidget extends StatelessWidget {
         Column(
           children: [
             SizedBox(
-              width: 400,
+              width: MediaQuery.of(context).size.width*.70,
               child: Text(
                 textAlign:TextAlign.center,
                 "The Complete 2022 Flutter&Dart",
@@ -135,11 +140,11 @@ class CertificatesWidget extends StatelessWidget {
             ),
           ],
         ),
-        const SizedBox(height: 20,),
+        const SizedBox(height: 40,),
         Column(
           children: [
             SizedBox(
-              width: 400,
+              width: MediaQuery.of(context).size.width*.70,
               child: Text(
                 textAlign: TextAlign.center,
                 "Flutter Advanced -MVVM in Arabic",

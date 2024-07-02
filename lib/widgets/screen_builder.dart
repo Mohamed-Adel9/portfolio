@@ -98,7 +98,111 @@ class ScreenBuilder extends StatelessWidget {
 
                       //separator
                       const MySeparator(
-                        text: "Education & Certificates",
+                        text: "Education ",
+                      ),
+
+                      //study and certificates
+                      const CertificatesWidget(isMobile : true),
+                      //separator
+                      const MySeparator(text: "My Projects"),
+
+                      //page four
+                      PageFourMob(),
+
+                      //separator
+                      const MySeparator(text: "Contact Me"),
+
+                      // contact me
+                      ContactUs(
+                        isMobile: true,
+                        formKey: _formKey,
+                        nameController: _nameController,
+                        emailController: _emailController,
+                        messageController: _messageController,
+                      ),
+
+                      Fotter(isMobile: true,scrollController: scrollController,),
+
+
+                    ],
+                  ),
+                ],
+              ),
+            );
+          }
+          else if (constraints.maxWidth > 600 && constraints.maxWidth < 1200 ) {
+            return SingleChildScrollView(
+              child: Stack(
+                children: [
+                  // BackGround Images
+                  Positioned.fill(
+                    child: Image.asset(
+                      "assets/images/BG.png",
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+
+                  // Foreground Content
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      //page one
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 18.0),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Container(
+                              width: 400,
+                              height: 400,
+                              decoration: const BoxDecoration(
+                                shape: BoxShape.circle,
+                                image: DecorationImage(
+                                    image: AssetImage('assets/images/me.jpg'),
+                                    fit: BoxFit.cover,
+                                    alignment: Alignment.bottomCenter),
+                              ),
+                              child: const CircleAvatar(
+                                radius: 300, // Adjust as needed
+                                backgroundColor: Colors.transparent,
+                              ),
+                            ),
+                            const SizedBox(
+                              height: 20.0,
+                            ),
+                            const PersonalInfoComponent(
+                              isMobile: true,
+                            ),
+                          ],
+                        ),
+                      ),
+
+                      //separator
+                      const MySeparator(text: "About Me"),
+
+                      //page two
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 14.0),
+                        child: AboutMeText(
+                          isMobile: true,
+                        ),
+                      ),
+
+                      //separator
+                      const MySeparator(
+                        text: "What I Do",
+                      ),
+
+                      //page three
+                      const WhatIDoPage(
+                        isMobile: true,
+                      ),
+
+
+                      //separator
+                      const MySeparator(
+                        text: "Education ",
                       ),
 
                       //study and certificates

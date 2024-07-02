@@ -7,7 +7,7 @@ class MySeparator extends StatelessWidget {
     required this.text,
   });
 
-  final String text ;
+  final String text;
 
   @override
   Widget build(BuildContext context) {
@@ -16,10 +16,9 @@ class MySeparator extends StatelessWidget {
       children: [
         Expanded(
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 30.0,vertical: 50),
+            padding: const EdgeInsets.symmetric(horizontal: 30.0, vertical: 50),
             child: Container(
               height: 3,
-
               decoration: const BoxDecoration(
                 color: Colors.white,
                 boxShadow: [
@@ -35,14 +34,13 @@ class MySeparator extends StatelessWidget {
         ),
         Text(
           '"$text"',
-          style: FontHelper.font1Bold(25,color: Colors.white),
+          style: FontHelper.font1Bold(25, color: Colors.white),
         ),
         Expanded(
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 30.0,vertical: 50),
+            padding: const EdgeInsets.symmetric(horizontal: 30.0, vertical: 50),
             child: Container(
               height: 3,
-
               decoration: const BoxDecoration(
                 color: Colors.white,
                 boxShadow: [
