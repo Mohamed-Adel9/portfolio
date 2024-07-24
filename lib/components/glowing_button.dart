@@ -4,9 +4,8 @@ import 'package:url_launcher/url_launcher.dart';
 class GlowingButton extends StatelessWidget {
   const GlowingButton({super.key});
 
-  //todo in future update to new cv link
   final String url =
-      "https://drive.google.com/file/d/1IvLj9-VHjQbXarumwjmLUo8_UyGA2pUg/view?usp=drive_link";
+      "https://drive.google.com/file/d/1vv7p3uBvWEQrxrUHKy2k0CZf9uV630ux/view?usp=sharing";
 
   Future<void> _cvLauncher(String url) async {
     if (await canLaunchUrl(Uri.parse(url))) {
